@@ -29,8 +29,8 @@ const App = () => {
   return (
     <div>
       {left}
-      <Button handleClick={handleLeftClick} text='left'/>
-      <Button handleClick={handleRightClick} text='right'/>
+      <Button handleClick={handleLeftClick} text="left" />
+      <Button handleClick={handleRightClick} text="right" />
       {right}
       <p>{allClicks.join(" ")}</p>
       <History allClicks={allClicks} />
