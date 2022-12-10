@@ -3,9 +3,10 @@ import { useState } from "react";
 const Button = ({ onClick, text }) => <button onClick={onClick}>{text}</button>;
 
 const StaticLine = ({ text, value }) => (
-  <p>
-    {text} {value}
-  </p>
+  <tr>
+    <td>{text}</td>
+    <td>{value}</td>
+  </tr>
 );
 
 const Statics = ({ good, neutral, bad }) => {
@@ -16,12 +17,16 @@ const Statics = ({ good, neutral, bad }) => {
   return total > 0 ? (
     <>
       <h2>statics</h2>
-      <StaticLine text="good" value={good} />
-      <StaticLine text="neutral" value={neutral} />
-      <StaticLine text="bad" value={bad} />
-      <StaticLine text="total" value={total} />
-      <StaticLine text="average" value={average} />
-      <StaticLine text="positive" value={positive} />
+      <table>
+        <tbody>
+          <StaticLine text="good" value={good} />
+          <StaticLine text="neutral" value={neutral} />
+          <StaticLine text="bad" value={bad} />
+          <StaticLine text="total" value={total} />
+          <StaticLine text="average" value={average} />
+          <StaticLine text="positive" value={positive} />
+        </tbody>
+      </table>
     </>
   ) : (
     <p>No feedback given</p>
